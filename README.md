@@ -18,6 +18,7 @@ The source code can be compiled within Visual Studio Code. The `.vscode` folder 
 
 To export the extension, navigate into the `cures-condec-vscode` folder and run:
 ```
+npm install
 vsce package
 ```
 
