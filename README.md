@@ -1,5 +1,8 @@
 # cures-condec-vscode
 
+[![Build Status](https://travis-ci.org/cures-hub/cures-condec-vscode.svg?branch=master)](https://travis-ci.org/cures-hub/cures-condec-vscode)
+[![GitHub contributors](https://img.shields.io/github/contributors/cures-hub/cures-condec-vscode.svg)](https://github.com/cures-hub/cures-condec-vscode/graphs/contributors)
+
 The CURES ConDec Visual Studio Code extension enables the user to explore decision knowledge from Visual Studio Code. Decision knowledge covers knowledge about decisions, the problems they address, solution proposals, their context, and justifications (rationale). The user can capture decision knowledge in code and commit messages and explore relevant knowledge for code. 
 
 ## Installation
