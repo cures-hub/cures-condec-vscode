@@ -5,6 +5,8 @@ node_js: 10
 script:
   - npm install codecov -g
   - npm run vscode:prepublish
-  - npm test
+  - nyc npm run test
+  - mkdir coverage
+  - nyc report --reporter=json > coverage/coverage.json
 after_success:
   - codecov

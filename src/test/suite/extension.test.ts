@@ -23,7 +23,7 @@ suite('Extension Test Suite', () => {
 
     const uri = await getURIToFileInGraph("src/main/condecTestClass.java");
     assert.deepStrictEqual(uri, vscode.Uri.parse("https://jira-se.ifi.uni-heidelberg.de/projects/CONDEC1?selectedItem=decision-knowledge-page&codeFileName=condecTestClass.java"));
-  });
+  }).timeout(10000);
 
   test('Read settings from input box', async () => {
     const config = vscode.workspace.getConfiguration('cures-condec-vscode');
@@ -36,7 +36,7 @@ suite('Extension Test Suite', () => {
     const uri = await getURIToFileInGraph("src/main/condecTestClass.java");
     inputBoxStub.restore();
     assert.deepStrictEqual(uri, vscode.Uri.parse("https://jira-se.ifi.uni-heidelberg.de/projects/CONDEC2?selectedItem=decision-knowledge-page&codeFileName=condecTestClass.java"));
-  });
+  }).timeout(10000);
 
   test('Test exception when no Jira URL is specified or provided', async () => {
 	const config = vscode.workspace.getConfiguration('cures-condec-vscode');
@@ -53,7 +53,7 @@ suite('Extension Test Suite', () => {
         assert(/The Jira URL is not specified. Please provide the URL of the Jira server. You can always change the URL in the workspace settings./.test(e.message));
         inputBoxStub.restore();
     }
-  });
+  }).timeout(10000);
 
   test('Test exception when no Project Key is specified or provided', async () => {
     const config = vscode.workspace.getConfiguration('cures-condec-vscode');
@@ -70,6 +70,6 @@ suite('Extension Test Suite', () => {
         assert(/The Jira Project Key is not specified. Please provide the Project Key of the Jira project. You can always change the Project Key in the workspace settings./.test(e.message));
         inputBoxStub.restore();
     }
-  });
+  }).timeout(10000);
 
 });

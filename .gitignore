@@ -352,3 +352,7 @@ MigrationBackup/
 cures-condec-vscode-*.vsix
 package-lock.json
 out/
+.nyc_output/
+.vscode-test/
+coverage/
+
