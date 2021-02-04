@@ -14,3 +14,5 @@ script:
   echo ">>> Run sample integration test"
   yarn && yarn compile && yarn test
 cache: yarn
+after_success:
+- bash <(curl -s https://codecov.io/bash)
