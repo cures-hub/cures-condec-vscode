@@ -8,5 +8,12 @@ script:
   - nyc npm run test
   - mkdir coverage
   - nyc report --reporter=json > coverage/coverage.json
+deploy:
+  provider: releases
+  api_key: API_KEY
+  file: cures-condec-jira@0.0.1.vsix
+  skip_cleanup: true
+  on:
+    tags: true
 after_success:
   - codecov -f coverage/coverage.json
