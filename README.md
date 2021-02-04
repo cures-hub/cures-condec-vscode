@@ -1,6 +1,9 @@
 # cures-condec-vscode
 
 [![Build Status](https://travis-ci.org/cures-hub/cures-condec-vscode.svg?branch=master)](https://travis-ci.org/cures-hub/cures-condec-vscode)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/eddb9e9514e643cca1ed9b36c17d9926)](https://www.codacy.com/gh/cures-hub/cures-condec-vscode/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cures-hub/cures-condec-vscode&amp;utm_campaign=Badge_Grade)
+[![Codecoverage](https://codecov.io/gh/cures-hub/cures-condec-vscode/branch/master/graph/badge.svg)](https://codecov.io/gh/cures-hub/cures-condec-vscode/branch/master)
+
 [![GitHub contributors](https://img.shields.io/github/contributors/cures-hub/cures-condec-vscode.svg)](https://github.com/cures-hub/cures-condec-vscode/graphs/contributors)
 
 The CURES ConDec Visual Studio Code extension enables the user to explore decision knowledge from Visual Studio Code. Decision knowledge covers knowledge about decisions, the problems they address, solution proposals, their context, and justifications (rationale). The user can capture decision knowledge in code and commit messages and explore relevant knowledge for code. 
@@ -19,7 +22,7 @@ The source code can be compiled within Visual Studio Code. The `.vscode` folder 
 To export the extension, navigate into the `cures-condec-vscode` folder and run:
 ```
 npm install
-vsce package
+vsce package -o cures-condec-vscode.vsix
 ```
 
 ### Download of Precompiled .vsix file
