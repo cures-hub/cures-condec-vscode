@@ -9,4 +9,4 @@ script:
   - mkdir coverage
   - nyc report --reporter=json > coverage/coverage.json
 after_success:
-  - codecov
+  - codecov -f coverage/coverage.json
