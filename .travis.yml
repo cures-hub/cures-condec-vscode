@@ -3,9 +3,8 @@ os:
 - osx
 node_js: 10
 script:
+  - npm install codecov -g
   - npm run vscode:prepublish
   - npm test
-
 after_success:
-- bash <(curl -s https://codecov.io/bash)
-
+  - codecov
