@@ -2,17 +2,10 @@ language: node_js
 os:
 - osx
 node_js: 10
-
-install:
-- |
 script:
-- |
-  echo ">>> Compile vscode-test"
-  yarn && yarn compile
-  echo ">>> Compiled vscode-test"
-  cd sample
-  echo ">>> Run sample integration test"
-  yarn && yarn compile && yarn test
-cache: yarn
+  - npm run vscode:prepublish
+  - npm test
+
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+
