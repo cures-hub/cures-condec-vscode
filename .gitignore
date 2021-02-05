@@ -350,9 +350,10 @@ MigrationBackup/
 .ionide/
 
 cures-condec-vscode-*.vsix
+cures-condec-vscode.vsix
 package-lock.json
 out/
 .nyc_output/
 .vscode-test/
 coverage/
-
+.DS_Store

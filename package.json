@@ -4,7 +4,7 @@
     "description": "Enables developers to continuously document and explore decision knowledge. Decision knowledge covers knowledge about decisions, the problems they address, solution proposals, their context, and justifications (rationale). The documented decision knowledge can be linked to Jira issues such as features, tasks to implement a feature, or bug reports.",
     "version": "0.0.1",
     "publisher": "de-uhd-ifi-se",
-    "icon": "cures.png",
+    "icon": "doc/cures.png",
     "license": "MIT",
     "repository": {
         "type": "git",
