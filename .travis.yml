@@ -9,8 +9,6 @@ script:
 - mkdir coverage
 - nyc report --reporter=text --include=src --exclude src/test
 - nyc report --reporter=clover --include=src --exclude src/test
-- cat coverage/clover.xml | sed 's/\/Users\/travis\/build\/cures-hub//g' > coverage/clover-relative.xml
-- cat coverage/clover-relative.xml
 - vsce package -o cures-condec-vscode.vsix
 deploy:
   provider: releases
@@ -21,7 +19,7 @@ deploy:
     tags: true
     branch: master
 after_success:
-- codecov -f coverage/clover-relative.xml
+- codecov -f $TRAVIS_BUILD_DIR/coverage/clover.xml
 env:
   global:
     secure: nJlN6rFliMZ0zmTlbsDFpeaOcJVpGabx/17LE2tZP+chpjuOnMxW7axd7lasoAGkJ7ikRS6dZQiUaIQ0wmVLPp4t/5rWJfaR815917aIeVqvondC+N5cg7318d5bPFa+qWaQMOS4IgMwK5DqPGerA+K4ypHC+Qo/tm9SQdVfN+aWD+TrdUHofGGLiMzpB+Ii5VKXP61emtlFNk6u0pkkDOYkWO1YLwHCz93DsLuXyULecshwUi9xiqmj3kpAT+nKcMuJIs08IbztqxLnMiBjWmfd78uXOt0xVvWRRDEIZPomlVvZGH+xVDGYBKsyFQSQGg1QuHdyCMgoSekVKo51kZ4WnwHgkc2TiwvcV2ki+07kLASAP4+z16mt+JIqCb+xfTw8sCG5mu4QuvqCvWt9We9GGBvUV2+YjZlo3zDUSrjW+QPgQX60ce2iqYItMjFiVOvhHhL6sauGQAs0G8+o6cINuSuCGaMSLdKVPL7muX2eCr+32Hp+DpXOJUSLw//42LRbmxmWHEtfPlsv41JcA7Q6XO3gnwkHuS+B51Szx04y+eVAmU7iAVtgktcXK10oGtmgLgMhYPOfx/x2hMjSSTv+wuiqtciv1Ced5TV7txoImi/EC9i9XxkibURVPqN5RNddAt0JpiNqDHUOReuPRn9Tkvd9OkY0XSZBho8HARs=
