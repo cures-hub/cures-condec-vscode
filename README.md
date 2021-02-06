@@ -33,6 +33,6 @@ The precompiled .vsix file for the latest release can be found here: https://git
 - [Install Visual Studio Code](https://code.visualstudio.com/Download)
 - Run `code --install-extension cures-condec-vscode.vsix`
 
-## User Interface
-The extension provides a status bar button that will open the currently active code file in the [Decision Knowledge Page in Jira](https://github.com/cures-hub/cures-condec-jira#decision-knowledge-page), where decision knowledge documented in or otherwise linked to the code file are shown in different views. The Jira Server URL and the Project Key related to a workspace is stored and can be changed in the workspace settings. 
+## User Interface and Usage Example
+The extension provides a status bar button that will open the currently active code file in the [Decision Knowledge Page in Jira](https://github.com/cures-hub/cures-condec-jira#decision-knowledge-page), where decision knowledge or other knowledge elements linked to or documented in the code file are shown in different views. The Jira Server URL and the Project Key related to a workspace is stored and can be changed in the workspace settings. 
 ![CURES ConDec Visual Studio Code extension](https://github.com/cures-hub/cures-condec-vscode/raw/master/doc/statusbar.png) 
