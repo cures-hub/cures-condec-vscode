@@ -1,4 +1,4 @@
-# cures-condec-vscode
+# cures-condec-vscode 
 
 [![Build Status](https://travis-ci.org/cures-hub/cures-condec-vscode.svg?branch=master)](https://travis-ci.org/cures-hub/cures-condec-vscode)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/eddb9e9514e643cca1ed9b36c17d9926)](https://www.codacy.com/gh/cures-hub/cures-condec-vscode/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cures-hub/cures-condec-vscode&amp;utm_campaign=Badge_Grade)
