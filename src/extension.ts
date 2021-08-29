@@ -17,8 +17,8 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 				throw new Error('No workspace detected.');
 			}
 			vscode.env.openExternal(await getURIToFileInGraph(vscode.window.activeTextEditor.document.fileName));
-		} catch(e) {
-			vscode.window.showErrorMessage(e.message);
+		} catch(e: any) {
+				vscode.window.showErrorMessage(e);
 		}
 }));
 
