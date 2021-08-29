@@ -5,19 +5,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
         with:
           node-version: 12
-    - run: npm install -g npm@latest
-    - run: npm install -g vscode@latest
-    - run: npm install codecov -g
-    - run: npm install -g vsce@latest
-    - run: npm run vscode:prepublish
-    - run: nyc npm run test
-    - run: mkdir coverage
-    - run: nyc report --reporter=text --include=src --exclude src/test
-    - run: nyc report --reporter=clover --include=src --exclude src/test
-    - run: vsce package -o cures-condec-vscode.vsix
+    - name: Install dependencies
+      run: npm install
+    - name: Build and test
+      run: npm install codecov -g
+      run: npm run vscode:prepublish
+      run: nyc npm run test
+      run: mkdir coverage
+      run: nyc report --reporter=text --include=src --exclude src/test
+      run: nyc report --reporter=clover --include=src --exclude src/test
+      run: vsce package -o cures-condec-vscode.vsix
     - name: Report test coverage via Codecov
       uses: codecov/codecov-action@v1.5.2
       with:
