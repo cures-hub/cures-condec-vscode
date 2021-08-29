@@ -11,10 +11,9 @@ jobs:
     - name: Build and test
       run: | 
         sudo apt-get install xvfb
-        sudo snap install --classic code
         npm install
         npm install codecov -g
-        npm install vsce
+        npm install -g vsce
         npm run vscode:prepublish
         xvfb-run --auto-servernum npx nyc npm run test
         mkdir coverage
