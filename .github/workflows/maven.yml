@@ -10,12 +10,11 @@ jobs:
         node-version: '12'
     - run: npm install codecov -g
     - run: npm install -g vsce
-    - run: npm run vscode:prepublish
+    - run: vsce package -o cures-condec-vscode.vsix
     - run: nyc npm run test
     - run: mkdir coverage
     - run: nyc report --reporter=text --include=src --exclude src/test
     - run: nyc report --reporter=clover --include=src --exclude src/test
-    - run: vsce package -o cures-condec-vscode.vsix
     - name: Report test coverage via Codecov
       uses: codecov/codecov-action@v1.5.2
       with:
