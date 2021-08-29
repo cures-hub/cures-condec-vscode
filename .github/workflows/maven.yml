@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - run: npm install -g node@latest
+    - uses: actions/setup-node@v1
+        with:
+          node-version: 12
     - run: npm install -g npm@latest
     - run: npm install -g vscode@latest
     - run: npm install codecov -g
