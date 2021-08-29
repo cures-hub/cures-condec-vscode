@@ -8,16 +8,13 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
-    - name: Run headless test
-      uses: GabrielBB/xvfb-action@v1
-      with:
-        run: npm test
     - name: Build and test
       run: | 
+        sudo apt-get install xvfb
         npm install
         npm install codecov -g
         npm run vscode:prepublish
-        npx nyc npm run test
+        xvfb-run --auto-servernum npx nyc npm run test
         mkdir coverage
         npx nyc report --reporter=text --include=src --exclude src/test
         npx nyc report --reporter=clover --include=src --exclude src/test
