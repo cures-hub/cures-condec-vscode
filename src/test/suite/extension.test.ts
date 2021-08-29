@@ -49,7 +49,7 @@ suite('Extension Test Suite', () => {
         await getURIToFileInGraph("src/main/condecTestClass.java");
         inputBoxStub.restore();
         assert(false, "The function terminated without throwing an exception");
-    } catch(e: unknown) {
+    } catch(e) {
         assert(/The Jira URL is not specified. Please provide the URL of the Jira server. You can always change the URL in the workspace settings./.test(e.message));
         inputBoxStub.restore();
     }
