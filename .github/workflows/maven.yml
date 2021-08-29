@@ -8,10 +8,9 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '12'
-    - name: Install dependencies
-      run: npm install
     - name: Build and test
       run: | 
+        npm install npm@latest
         npm install codecov -g
         npm run vscode:prepublish
         nyc npm run test
