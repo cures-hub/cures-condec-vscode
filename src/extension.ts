@@ -18,7 +18,9 @@ export function activate({ subscriptions }: vscode.ExtensionContext) {
 			}
 			vscode.env.openExternal(await getURIToFileInGraph(vscode.window.activeTextEditor.document.fileName));
 		} catch(e) {
-			vscode.window.showErrorMessage(e.message);
+			if (e instanceof Error) {
+				vscode.window.showErrorMessage(e);
+			}
 		}
 }));
 
@@ -49,7 +51,7 @@ export async function getURIToFileInGraph(filePath: string): Promise<vscode.Uri>
 			prompt: "URL of the Jira server"
 		};
 		
-		await vscode.window.showInputBox(jiraURLOptions).then(value => {
+		await vscode.window.showInputBox(jiraURLOptions).then(value: string => {
 			if (value) {
 				config.update('jiraURL', value, vscode.ConfigurationTarget.Workspace);
 				vscode.window.showInformationMessage("You can always change the URL in the workspace settings.");
