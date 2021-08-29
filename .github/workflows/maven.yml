@@ -11,13 +11,14 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Build and test
-      run: npm install codecov -g
-      run: npm run vscode:prepublish
-      run: nyc npm run test
-      run: mkdir coverage
-      run: nyc report --reporter=text --include=src --exclude src/test
-      run: nyc report --reporter=clover --include=src --exclude src/test
-      run: vsce package -o cures-condec-vscode.vsix
+      run: | 
+        npm install codecov -g
+        npm run vscode:prepublish
+        nyc npm run test
+        mkdir coverage
+        nyc report --reporter=text --include=src --exclude src/test
+        nyc report --reporter=clover --include=src --exclude src/test
+        vsce package -o cures-condec-vscode.vsix
     - name: Report test coverage via Codecov
       uses: codecov/codecov-action@v1.5.2
       with:
