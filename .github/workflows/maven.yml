@@ -13,6 +13,7 @@ jobs:
         sudo apt-get install xvfb
         npm install
         npm install codecov -g
+        npm install vsce
         npm run vscode:prepublish
         xvfb-run --auto-servernum npx nyc npm run test
         mkdir coverage
