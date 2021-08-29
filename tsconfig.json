@@ -8,10 +8,8 @@
 		"strict": true,
 		"rootDir": "src",
 		"noImplicitAny": false,
-		"types": [
-			"node",
-			"vscode",
-			"mocha"
+		"typeRoots": [
+			"node_modules/@types"
 		  ]
 	},
 	"exclude": [
