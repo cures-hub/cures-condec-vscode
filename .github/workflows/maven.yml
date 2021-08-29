@@ -10,7 +10,7 @@ jobs:
         node-version: '14'
     - name: Build and test
       run: | 
-        npm install npm@latest
+        npm install
         npm install codecov -g
         npm run vscode:prepublish
         nyc npm run test
